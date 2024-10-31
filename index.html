@@ -9,16 +9,18 @@
 <body>
   <header>
     <h1>Welcome to Radio Brics</h1>
-    <p>Streaming live music 24/7. Tune in and enjoy the vibes!</p>
+    <p>Your source for live music 24/7. Tune in and enjoy the vibes!</p>
   </header>
 
   <main>
     <div class="player-container">
-      <!-- Audio player with controls for play/pause -->
-      <audio id="audioPlayer" controls>
-        <source src="http://radiobrics.hopto.org:8000/stream" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+      <div id="player">
+        <button id="playPauseButton" class="play" aria-label="Play">
+          ▶️
+        </button>
+        <div id="loadingIndicator" class="hidden">Loading...</div>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" aria-label="Volume">
+      </div>
     </div>
   </main>
 
@@ -26,6 +28,7 @@
     <p>Made with ❤️ by Radio Brics</p>
   </footer>
 
+  <!-- Include the JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
