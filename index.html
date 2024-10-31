@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADIO BRICS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .player-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .player-controls {
+            margin: 20px 0;
+        }
+
+        .play-button {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: #45a049;
+        }
+
+        .status {
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .volume-control {
+            margin: 20px 0;
+            width: 200px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <h1>My Radio Station</h1>
+        
+        <!-- Native Audio Player -->
+        <audio id="audioPlayer" controls>
+            <source src="http://yourstation.hopto.org:8000/stream" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="status" id="status">Ready to play</div>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const statusDiv = document.getElementById('status');
+
+        audioPlayer.addEventListener('playing', () => {
+            statusDiv.textContent = '🎵 Now Playing';
+        });
+
+        audioPlayer.addEventListener('pause', () => {
+            statusDiv.textContent = 'Paused';
+        });
+
+        audioPlayer.addEventListener('error', () => {
+            statusDiv.textContent = 'Error: Could not load the stream';
+        });
+
+        audioPlayer.addEventListener('waiting', () => {
+            statusDiv.textContent = 'Buffering...';
+        });
+    </script>
+</body>
+</html>
