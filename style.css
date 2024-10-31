@@ -13,20 +13,33 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    text-align: center;
   }
   
   header, footer {
-    text-align: center;
     margin-bottom: 20px;
   }
   
   .player-container {
     margin-top: 20px;
-    text-align: center;
   }
   
   audio {
     width: 100%;
     max-width: 300px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  button {
+    background-color: #ff8800;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
   }
   
