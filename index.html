@@ -3,32 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radio Brics</title>
+  <title>Radio Brics - Stream Live</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Welcome to Radio Brics</h1>
-    <p>Your source for live music 24/7. Tune in and enjoy the vibes!</p>
+    <p>Live music streaming 24/7 – Enjoy the tunes!</p>
   </header>
 
   <main>
     <div class="player-container">
-      <div id="player">
-        <button id="playPauseButton" class="play" aria-label="Play">
-          ▶️
-        </button>
-        <div id="loadingIndicator" class="hidden">Loading...</div>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" aria-label="Volume">
-      </div>
+      <!-- Simplified audio player with play/pause controls -->
+      <audio id="audioPlayer" controls autoplay>
+        <source src="http://radiobrics.hopto.org:8000/stream" type="audio/mpeg">
+        <!-- If the stream URL fails, provide fallback text -->
+        Your browser does not support the audio element.
+      </audio>
     </div>
   </main>
 
   <footer>
     <p>Made with ❤️ by Radio Brics</p>
   </footer>
-
-  <!-- Include the JavaScript file -->
-  <script src="script.js"></script>
 </body>
 </html>
